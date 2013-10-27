@@ -51,9 +51,9 @@ PRODUCT_PACKAGES += \
     Tag
 
 PRODUCT_COPY_FILES += \
-    packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml 
+#   packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt 
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
@@ -70,7 +70,7 @@ PRODUCT_PACKAGES += \
     Stk \
     SamsungServiceMode
 
-$(call inherit-product-if-exists, vendor/cm/config/nfc_enhanced.mk)
+$(call inherit-product-if-exists, vendor/insomnia/config/nfc_enhanced.mk)
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
